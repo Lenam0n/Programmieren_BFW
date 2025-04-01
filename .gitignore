@@ -1,0 +1,45 @@
+# Kompilierte Klassen
+*.class
+
+# Log-Dateien
+*.log
+
+# Build-Verzeichnisse (z.B. Maven, Gradle, Ant)
+target/
+build/
+out/
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*.swp
+
+# IDE-spezifische Dateien
+
+## IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+## Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+## NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Betriebssystem-spezifische Dateien
+
+## macOS
+.DS_Store
+
+## Windows
+Thumbs.db
