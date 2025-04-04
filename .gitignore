@@ -1,3 +1,6 @@
+# Hilfe von anderen
+src/utils/hilfe
+
 # Kompilierte Klassen
 *.class
 
@@ -43,3 +46,4 @@ nbdist/
 
 ## Windows
 Thumbs.db
+

@@ -12,7 +12,7 @@ public class CityList2 {
     private String[] cityList;
 
     public CityList2() { this.cityList = new String[0]; }
-
+ 
     private boolean find(String c) { return Arrays.asList(this.cityList).contains(c); }
     
     private String[] reverse() {
@@ -63,8 +63,7 @@ public class CityList2 {
     	else { System.out.println("Die Städteliste wird in " 
 		    					+ (asc ? "alphabetischer" : "umgekehrter alphabetischer")
 		    					+ " Reihenfolge ausgegeben");
-	    	if(asc){ Arrays.stream(this.cityList).forEach(System.out::println);}
-	    	else{ Arrays.stream(this.reverse()).forEach(System.out::println);}
+	    	Arrays.stream(asc ? this.cityList : this.reverse() ).forEach(System.out::println);
     	}
     }
 }

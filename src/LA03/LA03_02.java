@@ -23,7 +23,7 @@ public class LA03_02 {
     }
 
     private LA03_02(int max) {
-    	this.max = max;
+    	this.max = max; 
     	this.min = 1;
     }
 

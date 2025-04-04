@@ -12,15 +12,18 @@ public class LA04_1 {
 	}
 	private String input(String prompt) {
 		System.out.print(prompt);
-		return sc.next();
+		return sc.nextLine();
 	}
 	public LA04_1 einlesen() {
 		String vor = input("Gebe deinen Vornamen ein: ") ; 
 		String nach = input("Gebe deinen Nachnamen ein: ") ; 
 		return new LA04_1(vor,nach);
 	}
-	public String getNameFormated() { return (this.vorname + " " + this.nachname); }
+	public String getNameFormated(boolean sm) { return (sm  
+													  ?	(this.vorname.toLowerCase() + " " + this.nachname.toLowerCase()) 
+													  : (this.vorname.toUpperCase() + " " + this.nachname.toUpperCase())
+													  ); }
 	public int[] getNameCount() { return new int[]{ this.vorname.length(), this.nachname.length() }; }
-	public String getFirstPartOfName(int count) { return this.nachname.substring(count); }
+	public String getFirstPartOfLastname(int count) { return this.nachname.length() >= 3 ? this.nachname.substring(0,count) : this.nachname; }
 
 }

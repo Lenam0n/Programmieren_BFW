@@ -16,11 +16,10 @@ public class LA04_02 {
         }
     }
 
-    public void print(boolean dir) {
+    public void print(boolean dir) { 
     	//import java.util.List;
     	//if (dir) { Stream<Integer> stream = Arrays.stream(this.arr);}
-    	//else{
-    	//    	List<Integer> reversed = Arrays.asList(this.arr);
+    	//else{ List<Integer> reversed = Arrays.asList(this.arr);
     	//    	Collections.reverse(reversed);
     	//    	stream = reversed.stream();
     	//	  }
