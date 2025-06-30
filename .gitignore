@@ -1,49 +1,68 @@
-# Hilfe von anderen
-src/utils/hilfe
+# ========================
+# Betriebssystem
+# ========================
+# macOS
+.DS_Store
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========================
+# Java
+# ========================
 # Kompilierte Klassen
 *.class
 
 # Log-Dateien
 *.log
 
-# Build-Verzeichnisse (z.B. Maven, Gradle, Ant)
-target/
-build/
-out/
+# BlueJ
+*.ctxt
+
+# Java-Packages
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Javadoc
+doc/
+
+# J2ME (Mobile Tools)
+.mtj.tmp/
+
+# JVM-Crash-Logs
+hs_err_pid*
 
 # Temporäre Dateien
+*~
+*.swp
 *.tmp
 *.bak
-*.swp
 
-# IDE-spezifische Dateien
+# Build-Ausgabe
+bin/
+out/
 
-## IntelliJ IDEA
-.idea/
-*.iml
-*.ipr
-*.iws
-
-## Eclipse
+# ========================
+# Eclipse
+# ========================
+.metadata/
+.settings/
 .project
 .classpath
-.settings/
-.metadata/
+*.launch
+.loadpath
+.recommenders/
+.apt_generated/
+.factorypath
 
-## NetBeans
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-# Betriebssystem-spezifische Dateien
-
-## macOS
-.DS_Store
-
-## Windows
-Thumbs.db
-
+# ========================
+# VS Code
+# ========================
+.vscode/
