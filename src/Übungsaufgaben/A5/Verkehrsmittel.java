@@ -1,21 +1,38 @@
 package Übungsaufgaben.A5;
 
-public abstract class Verkehrsmittel implements IBuchbar {
-    protected String bezeichnung;
-    protected int kapazitaet;
-    protected double preisProSitz;
 
-    public Verkehrsmittel(String b, int k,double p){
-        this.bezeichnung = b;
-        this.kapazitaet = k;
-        this.preisProSitz = p;
+public abstract class Verkehrsmittel implements IBuchbar {
+    protected final String bezeichnung;
+    protected int kapazitaet;
+    protected final double preisProSitz;
+
+    protected Verkehrsmittel(String bezeichnung, int kapazitaet, double preisProSitz) {
+        this.bezeichnung  = bezeichnung;
+        this.kapazitaet   = kapazitaet;
+        this.preisProSitz = preisProSitz;
     }
 
-    public double calcGesamtPreis(){ return (this.kapazitaet * this.preisProSitz); }
+    @Override
+    public boolean bucheSitze(int anzahl) throws BuchungsException {
+        if (anzahl <= 0) {  throw new BuchungsException("Ungültige Anzahl Sitze: " + anzahl);  }
+        if (kapazitaet < anzahl) {
+            throw new BuchungsException("Zu wenig Sitzplätze bei " + bezeichnung 
+                                        + " (verfügbar: " + kapazitaet + ", angefragt: " + anzahl + ")");
+        }
+        kapazitaet -= anzahl;
+        System.out.println("Gebucht " + anzahl 
+                            + " Sitz(e) bei " + bezeichnung 
+                            + ". Verbleibend: " + kapazitaet);
+        return true;
+    }
 
-    public void printInfo(){
-        System.out.println("Bezeichnung: " + this.bezeichnung);
-        System.out.println("Kapazität im Fahrzeug: " + this.kapazitaet);
-        System.out.println("Preis pro Sitz: " + this.preisProSitz);
+    public double calcGesamtPreis() {
+        return kapazitaet * preisProSitz;
+    }
+
+    public void printInfo() {
+        System.out.println("Bezeichnung: " + bezeichnung);
+        System.out.println("Kapazität: " + kapazitaet);
+        System.out.println("Preis pro Sitz: " + preisProSitz);
     }
 }

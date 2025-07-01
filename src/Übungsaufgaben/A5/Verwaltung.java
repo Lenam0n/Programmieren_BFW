@@ -1,36 +1,36 @@
 package Übungsaufgaben.A5;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Verwaltung {
     private List<Verkehrsmittel> v;
 
-    public Verwaltung(){ this.v = new ArrayList<>(); }
-    private void setVerkehrsmittel(Verkehrsmittel... v){
-        this.v = List.copyOf(Arrays.asList(v));
+    public Verwaltung() { this.v = List.of(); }
+    public Verwaltung(Verkehrsmittel... initial) {
+        this();
+        add(initial);
     }
 
-    public void addVerkehrsmittel(Verkehrsmittel... neue){
-        List<Verkehrsmittel> neueListe = new ArrayList<>(this.v);
-        neueListe.addAll(Arrays.asList(neue));
-        setVerkehrsmittel(neueListe.toArray(new Verkehrsmittel[0])); 
-        // Das neue Array, ohne länge, ist nur als Dummy Array für den Type und sonst nichts
+    private void setVerkehrsmittel(List<Verkehrsmittel> neueListe) {  this.v = List.copyOf(neueListe); }
+    public List<Verkehrsmittel> getVerkehrsmittel() { return this.v; }
+
+    public void add(Verkehrsmittel... neue) {
+        var copy = new ArrayList<Verkehrsmittel>(v);
+        Collections.addAll(copy, neue);
+        setVerkehrsmittel(copy);
     }
 
-    public boolean buchen(Verkehrsmittel o,int anzahl){
-        try{ 
-            if(v.contains(o)){
-                Verkehrsmittel vm = v.get(v.indexOf(o));
-                vm.bucheSitze(anzahl); 
-            }
-            else{ throw new Exception("Verkehrsmittel gibt es nicht!"); }
-        }
-        catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
+    public boolean buchen(Verkehrsmittel vm, int anzahl) {
+        try {
+            if (!this.v.contains(vm)) { throw new BuchungsException("Verkehrsmittel nicht in der Verwaltung: " + vm); }
+            return vm.bucheSitze(anzahl);
+        } catch (BuchungsException e) {
+            System.err.println("Fehler bei der Buchung: " + e.getMessage());
             return false;
         }
-        return true;
     }
+
+
 }

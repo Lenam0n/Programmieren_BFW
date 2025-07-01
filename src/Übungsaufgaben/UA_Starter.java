@@ -10,7 +10,7 @@ import Übungsaufgaben.A5.Verwaltung;
 import Übungsaufgaben.A5.Zug;
 
 public class UA_Starter {
-    private static final int aufgabe = 1;
+    private static final int aufgabe = 5;
     public static void main(String[] args){
         switch (aufgabe) {
             case 1: break;
@@ -30,8 +30,7 @@ public class UA_Starter {
                 Verkehrsmittel v1 = new Bus("Bus E19", 30 , 2.9);
                 Verkehrsmittel v2 = new Zug("Zug S8", 130 , 7.9);
 
-                Verwaltung V = new Verwaltung();
-                V.addVerkehrsmittel(v1,v2);
+                Verwaltung V = new Verwaltung(v1,v2);
                 V.buchen(v2,1);
 
                 

@@ -7,18 +7,11 @@ public class Zug extends Verkehrsmittel {
     }
 
     @Override
-    public boolean bucheSitze(int anzahl) {
-        try{ 
-            if(this.kapazitaet > 0){
-                this.kapazitaet -= 1;
-                System.out.println("Neue Verfügbarkeit: " + this.kapazitaet); 
-                return true; }
-            else{ throw new Exception("Zu wenig Sitzplätze!");} 
+    public boolean bucheSitze(int anzahl) throws BuchungsException {
+        boolean ok = super.bucheSitze(anzahl);
+        if (ok && anzahl >= 10) {
+            System.out.println("Gruppenrabatt angewendet! (-10%)");
         }
-        catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
-            return false;
-        }
-        
+        return ok;
     }
 }
