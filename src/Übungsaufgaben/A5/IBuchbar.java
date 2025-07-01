@@ -1,5 +1,5 @@
 package Übungsaufgaben.A5;
 
-public interface Buchbar {
+public interface IBuchbar {
     public boolean bucheSitze(int anzahl);
 }

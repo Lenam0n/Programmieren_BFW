@@ -32,7 +32,7 @@ public class UA_Starter {
 
                 Verwaltung V = new Verwaltung();
                 V.addVerkehrsmittel(v1,v2);
-                V.buchen(v2);
+                V.buchen(v2,1);
 
                 
                 break;

@@ -1,6 +1,6 @@
 package Übungsaufgaben.A5;
 
-public class Bus extends Verkehrsmittel implements Buchbar {
+public class Bus extends Verkehrsmittel {
 
     public Bus(String b, int k,double p){
         super(b, k, p);
@@ -9,7 +9,10 @@ public class Bus extends Verkehrsmittel implements Buchbar {
     @Override
     public boolean bucheSitze(int anzahl) {
         try{ 
-            if(this.kapazitaet > 0){ return true; }
+            if(this.kapazitaet > 0){
+                this.kapazitaet -= 1;
+                System.out.println("Neue Verfügbarkeit: " + this.kapazitaet); 
+                return true; }
             else{ throw new Exception("Zu wenig Sitzplätze!");} 
         }
         catch(Exception e){

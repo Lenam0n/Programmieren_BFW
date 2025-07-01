@@ -19,11 +19,11 @@ public class Verwaltung {
         // Das neue Array, ohne länge, ist nur als Dummy Array für den Type und sonst nichts
     }
 
-    public boolean buchen(Verkehrsmittel o){
+    public boolean buchen(Verkehrsmittel o,int anzahl){
         try{ 
             if(v.contains(o)){
                 Verkehrsmittel vm = v.get(v.indexOf(o));
-                if (vm.kapazitaet > 0) { vm.buchPlatz(); }
+                if (vm.kapazitaet > 0) { vm.bucheSitze(anzahl); }
                 else{ throw new Exception("nicht genug Plätze verfügbar!"); }
             }
             else{ throw new Exception("Verkehrsmittel gibt es nicht!"); }

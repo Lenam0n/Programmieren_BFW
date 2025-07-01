@@ -1,6 +1,6 @@
 package Übungsaufgaben.A5;
 
-public abstract class Verkehrsmittel {
+public abstract class Verkehrsmittel implements IBuchbar {
     protected String bezeichnung;
     protected int kapazitaet;
     protected double preisProSitz;
@@ -17,9 +17,5 @@ public abstract class Verkehrsmittel {
         System.out.println("Bezeichnung: " + this.bezeichnung);
         System.out.println("Kapazität im Fahrzeug: " + this.kapazitaet);
         System.out.println("Preis pro Sitz: " + this.preisProSitz);
-    }
-    public void buchPlatz(){
-        this.kapazitaet -= 1;
-        System.out.println("Neue Verfügbarkeit: " + this.kapazitaet);
     }
 }
