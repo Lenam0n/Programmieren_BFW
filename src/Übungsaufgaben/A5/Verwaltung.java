@@ -23,8 +23,7 @@ public class Verwaltung {
         try{ 
             if(v.contains(o)){
                 Verkehrsmittel vm = v.get(v.indexOf(o));
-                if (vm.kapazitaet > 0) { vm.bucheSitze(anzahl); }
-                else{ throw new Exception("nicht genug Plätze verfügbar!"); }
+                vm.bucheSitze(anzahl); 
             }
             else{ throw new Exception("Verkehrsmittel gibt es nicht!"); }
         }
